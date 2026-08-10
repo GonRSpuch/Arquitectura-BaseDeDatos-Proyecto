@@ -83,5 +83,33 @@ Este enfoque tradicional presentaba tres fallas críticas de diseño:
 Ante este diagnóstico, se propuso a la jefatura reestructurar el requerimiento original pasando de un registro plano a un **Modelo de Datos Relacional de 3 Entidades**, separando la cabecera del viaje, el detalle de pasajeros y el control individualizado de servicios/proveedores.
 
 
+![Excel Legacy Raw](Excel1.png)
 
+## 4. Diagnóstico de Datos y Puntos de Dolor (Legacy System Analysis)
 
+Para documentar la problemática inicial, se analizó el registro histórico de operaciones. A continuación se presenta la captura del sistema previo en formato de **Tabla Plana**:
+
+![Captura de Registro Histórico Plano](Excel1.png)
+
+---
+
+### ⚠️ Principales Inconsistencias y Defectos de Estructura Identificados
+
+Al auditar la tabla plana original, se detectaron 5 categorías de fallas que afectaban la confiabilidad operativa y financiera:
+
+1. **Saturación y Falta de Atomicidad en Celdas:**
+   * **Pasajeros:** Celdas con hasta 4 o 5 nombres agrupados por comas (`Carlos Pérez, Ana Gómez, Juan Pérez`).
+   * **Hoteles y Servicios:** Múltiples proveedores y estancias internacionales hacinadas en una sola celda (`Hotel Plaza Madrid, Hotel Mercure Paris, Hotel Artemide Roma`), impidiendo filtrar o liquidar pagos por proveedor individual.
+
+2. **Duplicidad de Registros y Redundancia:**
+   * Expedientes cargados múltiples veces por falta de un identificador único (`ID_Viaje`). Por ejemplo, la expedición `EuroTour Clásico` del 10/01/2026 figura dos veces con datos parcialmente redundantes, duplicando artificialmente la facturación de la empresa.
+
+3. **Inconsistencia de Categorías y Errores de Tipeo (Falta de Validación):**
+   * **Estados de pago/viaje:** Incoherencias tipográficas entre filas (`Confirmado`, `CONFIRMADO`, `confimado` [con error de ortografía], `Presupuestado`). Esto imposibilita el uso de tablas dinámicas y filtros automatizados.
+   * **Destinos:** Variaciones como `París` (con tilde) y `Paris` (sin tilde).
+
+4. **Formatos de Fecha Mezclados:**
+   * Coexistencia de formatos regionales (`DD/MM/AAAA`) con formatos ISO (`AAAA-MM-DD`, e.g. `2026-02-15`), lo que rompe los cálculos automáticos de días de extensión y alertas de vencimiento en Excel.
+
+5. **Imposibilidad de Auditar Vencimientos y Márgenes Financieros:**
+   * Al tener las fechas de vencimiento de transportes y hoteles repartidas en celdas estáticas al costado de la fila, resulta imposible armar un cronograma unificado de pagos a proveedores o prever liquidaciones por vencer en la semana.
