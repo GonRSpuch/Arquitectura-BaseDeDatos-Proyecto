@@ -111,3 +111,49 @@ Al auditar la tabla plana original, se detectaron 5 categorías de fallas que af
 
 5. **Imposibilidad de Auditar Vencimientos y Márgenes Financieros:**
    * Al tener las fechas de vencimiento de transportes y hoteles repartidas en celdas estáticas al costado de la fila, resulta imposible armar un cronograma unificado de pagos a proveedores o prever liquidaciones por vencer en la semana.
+  
+
+## 5. Diseño de la Solución: Arquitectura Relacional de 3 Pestañas
+
+Para resolver de manera definitiva las inconsistencias del modelo plano anterior, se reestructuró la base de datos aplicando **principios de normalización de bases de datos**. 
+
+Se diseñó una arquitectura de **3 entidades principales** conectadas mediante una clave primaria única (`ID_Viaje`), eliminando la redundancia de datos y garantizando que cada registro contenga únicamente información atómica.
+
+---
+
+### Estructura Detallada de las Pestañas
+
+#### 1. Pestaña `VIAJES` (Tabla Principal / Expedientes)
+Centraliza la información ejecutiva y los consolidados financieros de cada expediente comercial.
+* **Campos clave:** `ID_Viaje` (PK, e.g. `EXP-2026-001`), `Nombre del Viaje`, `Fecha Creación`, `Fecha Salida`, `Extensión (Días)`, `Estado` (mediante Validación de Datos), `Responsable`, `Costo Estimado`, `Precio de Venta`, `Margen ($)`, `Margen (%)`.
+* **Mejoras implementadas:** 
+  * Asignación de un `ID_Viaje` único e irrepetible para evitar la duplicación de expedientes.
+  * Formato unificado de fechas (`DD/MM/AAAA`) y validación de listas desplegables para el campo `Estado` (`Presupuestado`, `Confirmado`, `Finalizado`, `Cancelado`).
+
+---
+
+#### 2. Pestaña `PASAJEROS` (Relación 1 a Muchos)
+Almacena los datos individuales de cada pasajero. Un expediente (`ID_Viaje`) puede tener múltiples pasajeros asignados, pero cada fila representa a **un solo pasajero atómico**.
+* **Campos clave:** `ID_Pasajero`, `ID_Viaje` (FK), `Nombre Completo`, `Rol` (Titular / Acompañante), `Contacto`.
+* **Mejoras implementadas:** 
+  * Se eliminaron las celdas abarrotadas con nombres separados por comas.
+  * Permite consultar y filtrar pasajeros individualmente o contabilizar el total de clientes por expediente de forma exacta.
+
+---
+
+#### 3. Pestaña `SERVICIOS` (Relación 1 a Muchos / Liquidación a Proveedores)
+Desglosa cada uno de los proveedores asociados a un viaje (aerolíneas, hoteles, dmc/operadores, asistencias). Un expediente (`ID_Viaje`) puede requerir múltiples servicios contratados en distintas fechas.
+* **Campos clave:** `ID_Servicio`, `ID_Viaje` (FK), `Categoría` (Transporte / Hotel / Operador), `Proveedor / Nombre`, `Destino`, `Fecha Contrato`, `Vencimiento Pago`, `Costo ($)`, `Estado de Pago` (Pendiente / Pagado).
+* **Mejoras implementadas:** 
+  * **Cronograma de Vencimientos:** Permite monitorear las fechas límite de pago a hoteles y aerolíneas de forma independiente.
+  * Soluciona el problema de tener múltiples hoteles y transportes apiñados en la misma celda de la tabla plana.
+
+---
+
+### Reglas de Validación e Integridad Aplicadas en Excel
+
+1. **Listas Desplegables (Validación de Datos):** Estandarización estricta de estados (`Confirmado`, `Presupuestado`, `Cancelado`, `Finalizado`) para garantizar que las tablas dinámicas y métricas no presenten sesgos por errores de tipeo.
+2. **Formato Automático de Fechas:** Aplicación del formato regional estandarizado `DD/MM/AAAA` a todas las columnas temporales.
+3. **Cálculos Financieros Automatizados:**
+   * $\text{Margen (\$)} = \text{Precio de Venta} - \text{Costo Estimado}$
+   * $\text{Margen (\%)} = \frac{\text{Margen (\$)}}{\text{Precio de Venta}}$
