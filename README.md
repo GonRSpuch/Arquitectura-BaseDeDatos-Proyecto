@@ -143,6 +143,7 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 *Figura 1: Pestaña de Registro de Viajes y Clientes.*
 
 ![Pestaña Servicios y Pagos](PestañaPasajeros.png)
+
 *Figura 2: Control de Servicios, Operadores y Vencimiento de Pagos.*
 
 ![Pestaña Dashboard y KPIs](PestañaServiciosyPagos.png)
