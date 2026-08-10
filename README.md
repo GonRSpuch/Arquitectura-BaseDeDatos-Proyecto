@@ -1,4 +1,4 @@
-### 0. Descargo de Responsabilidad (Disclaimer)
+## 0. Descargo de Responsabilidad (Disclaimer)
 
 Toda la información presentada en este repositorio ha sido completamente anonimizada y modificada para proteger la confidencialidad institucional y comercial. Los datos, figuras, registros y conclusiones no representan el desempeño real de la organización y tienen un propósito exclusivamente educativo, analítico y de demostración técnica.
 
