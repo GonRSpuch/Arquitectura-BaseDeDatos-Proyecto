@@ -137,7 +137,7 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 
 ---
 
-## Capturas del Sistema / Dashboard
+## Capturas del Sistema
 
 ![Pestaña Registro de Viajes](PestañaViajes.png)
 *Figura 1: Pestaña de Registro de Viajes y Clientes.*
