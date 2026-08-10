@@ -77,13 +77,11 @@ Este enfoque tradicional presentaba tres fallas críticas de diseño:
 2. **Duplicidad de datos y redundancia:** Si un viaje incluye 3 hoteles y 2 transportes, repetir la fila principal para cada proveedor genera inconsistencias financieras en los montos totales.
 3. **Alto riesgo de error humano:** Escribir textos extensos o fechas de vencimiento de forma desestructurada impide generar alertas automáticas de pago.
 
----
 
 ### Decisión de Arquitectura: Normalización y Modelo Relacional
 Ante este diagnóstico, se propuso a la jefatura reestructurar el requerimiento original pasando de un registro plano a un **Modelo de Datos Relacional de 3 Entidades**, separando la cabecera del viaje, el detalle de pasajeros y el control individualizado de servicios/proveedores.
 
-
-![Excel Legacy Raw](Excel1.png)
+---
 
 ## 4. Diagnóstico de Datos y Puntos de Dolor (Legacy System Analysis)
 
