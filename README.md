@@ -200,7 +200,7 @@ Para la correcta interpretación de este modelo y sus datos de prueba, se deben 
 
 ---
 
-## 9. Potencial y Escalabilidad Futura (Roadmap Técnico)
+## 8. Potencial y Escalabilidad Futura (Roadmap Técnico)
 
 Aunque esta solución basada en Excel resuelve de manera eficiente la estructuración inicial de datos y la visibilidad operativa, el diseño relacional implementado (`1 : N`) servirá como cimiento para escalar el sistema hacia una arquitectura de datos empresarial.
 
