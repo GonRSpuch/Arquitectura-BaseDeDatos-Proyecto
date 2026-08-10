@@ -170,7 +170,7 @@ Basado en el análisis operativo, el control de proveedores y el flujo de caja d
 
 ---
 
-## 8. Consideraciones y Supuestos (Caveats)
+## 7. Consideraciones y Supuestos (Caveats)
 
 Para la correcta interpretación de este modelo y sus datos de prueba, se deben tener en cuenta las siguientes consideraciones:
 
