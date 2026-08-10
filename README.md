@@ -124,4 +124,9 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 2. Pestaña PASAJEROS (Relación 1 a Muchos)Almacena los datos individuales de cada pasajero de forma atómica. Un expediente (ID_Viaje) puede tener múltiples pasajeros asignados.Campos: ID_Pasajero, ID_Viaje, Nombre, Apellido, DNI / Pasaporte, Teléfono.
 3. Pestaña SERVICIOS Y PAGOS (Relación 1 a Muchos / Control de Proveedores)Desglosa individualmente los servicios contratados por viaje (hoteles, transportes) para auditar contratos y vencimientos de liquidación.Campos: ID_Servicio, ID_Viaje, Tipo Servicio, Proveedor / Empresa, Operador Exterior, Contacto Operador, Fecha Contrato, Vencimiento Pago, Estado Pago.
 
-Reglas de Validación e Integridad Aplicadas en ExcelListas Desplegables (Validación de Datos): Estandarización de estados en la pestaña VIAJES (Confirmado, Presupuestado, Finalizado, Cancelado) y en SERVICIOS Y PAGOS (Pagado, Pendiente, Vencido).Formato Automático de Fechas: Aplicación del formato regional estandarizado DD/MM/AAAA a todas las columnas temporales.Cálculos Financieros Automatizados:$\text{Margen (\$)} = \text{Precio Venta} - \text{Costo Estimado}$$\text{Margen (\%)} = \frac{\text{Margen (\$)}}{\text{Precio Venta}}$
+Reglas de Validación e Integridad Aplicadas en ExcelListas Desplegables (Validación de Datos): 
+Estandarización de estados en la pestaña VIAJES (Confirmado, Presupuestado, Finalizado, Cancelado) y en SERVICIOS Y PAGOS (Pagado, Pendiente, Vencido).
+Formato Automático de Fechas: Aplicación del formato regional estandarizado DD/MM/AAAA a todas las columnas temporales.
+Cálculos Financieros Automatizados:
+Margen ($) = {Precio Venta} - {Costo Estimado}
+Margen (%) = {Margen (\$)}\{Precio Venta}}
