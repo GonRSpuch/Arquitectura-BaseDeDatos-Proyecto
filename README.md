@@ -148,3 +148,32 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 
 ![Pestaña Dashboard y KPIs](PestañaServiciosyPagos.png)
 *Figura 3: Dashboard de Indicadores Clave y Tablas Dinámicas.*
+
+--- 
+
+## 6. Recomendaciones Estratégicas
+
+Basado en el análisis operativo, el control de proveedores y el flujo de caja del sistema de gestión de viajes, se sugieren las siguientes acciones estratégicas para optimizar la operación:
+
+### 1. Gestión de Proveedores y Servicios
+* **Auditoría de vencimientos:** Implementar una revisión semanal del panel de pagos para evitar mora en proveedores críticos (como aerolíneas y cadenas hoteleras) y prevenir la cancelación imprevista de reservas.
+* **Consolidación de operadores externos:** Identificar los operadores del exterior (`DMC`) con mayor volumen de contratación para renegociar tarifas mayoristas o mejores plazos de pago.
+* **Control de servicios pendientes:** Establecer un protocolo de seguimiento sobre aquellos viajes en estado "En Proceso" que aún no tienen asignado o confirmado el 100% de sus servicios contratados.
+
+### 2. Control Financiero y Flujo de Caja
+* **Estandarización de alertas de pago:** Priorizar la cancelación de facturas vencidas para reducir recargos financieros y mantener una calificación crediticia óptima con los prestadores.
+* **Proyección de ingresos vs. egresos:** Utilizar la información del Dashboard para prever los requerimientos de liquidez antes de las fechas pico de salidas de grupos y viajes corporativos.
+
+### 3. Calidad de Datos y Mantenimiento de la Planilla
+* **Validación en el ingreso de datos:** Restringir el ingreso manual mediante listas desplegables (Data Validation) en campos clave como *Estado del Viaje*, *Tipo de Servicio* y *Estado de Pago* para evitar inconsistencias en las tablas dinámicas.
+* **Identificadores únicos:** Mantener la integridad referencial obligatoria mediante los campos `ID_Viaje` e `ID_Servicio` al registrar nuevas operaciones.
+
+---
+
+## 8. Consideraciones y Supuestos (Caveats)
+
+Para la correcta interpretación de este modelo y sus datos de prueba, se deben tener en cuenta las siguientes consideraciones:
+
+* **Datos de prueba y confidencialidad:** Todos los nombres de clientes, emails, fechas y montos fueron generados con fines ilustrativos y no corresponden a transacciones comerciales reales.
+* **Tipo de cambio e impuestos:** Los valores están expresados en moneda homogénea; no se incluyen cálculos automáticos de retenciones impositivas ni conversiones multimoneda en tiempo real.
+* **Actualización manual:** Las tablas dinámicas requieren una actualización de datos (`Ctrl + Alt + F5` o *Refresh*) al incorporar nuevos registros en las pestañas de entrada.
