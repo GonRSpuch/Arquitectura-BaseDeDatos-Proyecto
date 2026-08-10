@@ -1,3 +1,23 @@
+# Sistema de Gestión Operativa de Viajes y Control Financiero
+
+**Gonzalo Rodríguez Spuch** — *Data Portfolio Project* – 2026
+
+---
+
+## 📋 Tabla de Contenidos (Table of Contents)
+
+* [0. Descargo de Responsabilidad (Disclaimer)](#0-descargo-de-responsabilidad-disclaimer)
+* [1. Visión General del Proyecto (Project Overview)](#1-visión-general-del-proyecto-project-overview)
+* [2. Objetivos del Proyecto (Project Goals)](#2-objetivos-del-proyecto-project-goals)
+* [3. Levantamiento de Requerimientos y Metodología (Requirement Gathering)](#3-levantamiento-de-requerimientos-y-metodología-requirement-gathering)
+* [4. Diagnóstico de Datos y Puntos de Dolor (Legacy System Analysis)](#4-diagnóstico-de-datos-y-puntos-de-dolor-legacy-system-analysis)
+* [5. Diseño de la Solución: Arquitectura Relacional de 3 Pestañas](#5-diseño-de-la-solución-arquitectura-relacional-de-3-pestañas)
+* [6. Recomendaciones Estratégicas](#6-recomendaciones-estratégicas)
+* [7. Consideraciones y Supuestos (Caveats)](#7-consideraciones-y-supuestos-caveats)
+* [8. Potencial y Escalabilidad Futura (Roadmap Técnico)](#8-potencial-y-escalabilidad-futura-roadmap-técnico)
+
+---
+
 ## 0. Descargo de Responsabilidad (Disclaimer)
 
 Toda la información presentada en este repositorio ha sido completamente anonimizada y modificada para proteger la confidencialidad institucional y comercial. Los datos, figuras, registros y conclusiones no representan el desempeño real de la organización y tienen un propósito exclusivamente educativo, analítico y de demostración técnica.
