@@ -129,4 +129,4 @@ Reglas de Validación e Integridad Aplicadas en ExcelListas Desplegables (Valida
 -Formato Automático de Fechas: Aplicación del formato regional estandarizado DD/MM/AAAA a todas las columnas temporales.
 -Cálculos Financieros Automatizados:
 Margen ($) = {Precio Venta} - {Costo Estimado}
-Margen (%) = {Margen (\$)}\{Precio Venta}}
+Margen (%) = Margen (\$)\Precio Venta
