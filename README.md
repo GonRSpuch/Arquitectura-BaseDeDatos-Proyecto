@@ -19,7 +19,28 @@ Este proyecto aborda la reestructuración del sistema de registro operativo y fi
 
 En lugar de una tabla plana, la solución se estructuró en **3 entidades interconectadas mediante claves relacionales (IDs)**:
 
-```text
-[ VIAJES ] (1) <---> (N) [ PASAJEROS ]
-    |
-    +-----> (N) [ SERVICIOS Y PAGOS ]
+1. VIAJES (Entidad Principal)
+Función: Control de cabecera de expedientes.
+
+Campos clave: ID_Viaje, Nombre_Viaje, Fecha_Salida, Costo_Estimado, Precio_Venta, Estado.
+
+Automatización: Cálculo automático de Margen ($) y % Margen. Controles de estado mediante validación de listas.
+
+2. PASAJEROS (Relación 1 a Muchos)
+Función: Registro detallado de clientes por viaje.
+
+Clave Foránea: ID_Viaje (asocia múltiples pasajeros a un solo expediente sin saturar la vista principal).
+
+3. SERVICIOS Y PAGOS (Control Operativo)
+Función: Seguimiento individualizado de proveedores (hoteles, transportes, excursiones).
+
+Control Financiero: Alertas de fechas de contrato y vencimientos de pago.
+
+🛠️ Funcionalidades Clave e Impacto de Negocio
+🚥 Control Visual de Pagos (Semáforo Condicional): Identificación automática de estados de pago (Pagado 🟢, Pendiente 🟡, Vencido 🔴) para prevenir la cancelación involuntaria de reservas.
+
+🛡️ Calidad e Integridad de Datos: Restricción de entrada mediante Validación de Datos (listas desplegables estandarizadas), eliminando errores de tipeo.
+
+📈 Escalabilidad: Formato nativo de Tablas Oficiales de Excel (Ctrl + T) para la propagación automática de fórmulas ante nuevas entradas.
+
+Autor: Gonzalo Rodríguez Spuch
