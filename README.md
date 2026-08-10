@@ -131,6 +131,6 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 
 3. Cálculos Financieros Automatizados:
 
-Margen ($): Precio Venta - Costo Estimado
+    Margen ($): Precio Venta - Costo Estimado
 
-Margen (%): Margen ($) / Precio Venta
+    Margen (%): Margen ($) / Precio Venta
