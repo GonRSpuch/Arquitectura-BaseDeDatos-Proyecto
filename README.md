@@ -120,9 +120,9 @@ Para resolver de manera definitiva las inconsistencias del modelo plano anterior
 Se diseñó una arquitectura de **3 entidades principales** interconectadas mediante claves relacionales (`ID_Viaje`), eliminando la redundancia de datos y garantizando que cada registro contenga únicamente información atómica.
 
 ### Vista y Estructura Detallada de las Pestañas
-1. Pestaña VIAJES (Tabla Principal / Expedientes)Centraliza la información ejecutiva y los consolidados financieros de cada expediente comercial.Campos: ID_Viaje, Nombre Viaje, Fecha Salida, Duración (Días), Costo Estimado, Precio Venta, Margen ($), Margen (%), Responsable, Estado.
-2. Pestaña PASAJEROS (Relación 1 a Muchos)Almacena los datos individuales de cada pasajero de forma atómica. Un expediente (ID_Viaje) puede tener múltiples pasajeros asignados.Campos: ID_Pasajero, ID_Viaje, Nombre, Apellido, DNI / Pasaporte, Teléfono.
-3. Pestaña SERVICIOS Y PAGOS (Relación 1 a Muchos / Control de Proveedores)Desglosa individualmente los servicios contratados por viaje (hoteles, transportes) para auditar contratos y vencimientos de liquidación.Campos: ID_Servicio, ID_Viaje, Tipo Servicio, Proveedor / Empresa, Operador Exterior, Contacto Operador, Fecha Contrato, Vencimiento Pago, Estado Pago.
+1. Pestaña "VIAJES" (Tabla Principal / Expedientes)Centraliza la información ejecutiva y los consolidados financieros de cada expediente comercial.Campos: ID_Viaje, Nombre Viaje, Fecha Salida, Duración (Días), Costo Estimado, Precio Venta, Margen ($), Margen (%), Responsable, Estado.
+2. Pestaña "PASAJEROS" (Relación 1 a Muchos)Almacena los datos individuales de cada pasajero de forma atómica. Un expediente (ID_Viaje) puede tener múltiples pasajeros asignados.Campos: ID_Pasajero, ID_Viaje, Nombre, Apellido, DNI / Pasaporte, Teléfono.
+3. Pestaña "SERVICIOS Y PAGOS" (Relación 1 a Muchos / Control de Proveedores)Desglosa individualmente los servicios contratados por viaje (hoteles, transportes) para auditar contratos y vencimientos de liquidación.Campos: ID_Servicio, ID_Viaje, Tipo Servicio, Proveedor / Empresa, Operador Exterior, Contacto Operador, Fecha Contrato, Vencimiento Pago, Estado Pago.
 
 ### Reglas de Validación e Integridad Aplicadas en Excel
 1. Listas Desplegables (Validación de Datos): Estandarización de estados en la pestaña VIAJES (Confirmado, Presupuestado, Finalizado, Cancelado) y en SERVICIOS Y PAGOS (Pagado, Pendiente, Vencido).
