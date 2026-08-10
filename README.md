@@ -91,7 +91,7 @@ Para documentar la problemática inicial, se analizó el registro histórico de 
 
 ---
 
-### ⚠️ Principales Inconsistencias y Defectos de Estructura Identificados
+### Principales Inconsistencias y Defectos de Estructura Identificados
 
 Al auditar la tabla plana original, se detectaron 5 categorías de fallas que afectaban la confiabilidad operativa y financiera:
 
