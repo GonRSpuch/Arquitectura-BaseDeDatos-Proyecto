@@ -177,3 +177,32 @@ Para la correcta interpretación de este modelo y sus datos de prueba, se deben 
 * **Datos de prueba y confidencialidad:** Todos los nombres de clientes, emails, fechas y montos fueron generados con fines ilustrativos y no corresponden a transacciones comerciales reales.
 * **Tipo de cambio e impuestos:** Los valores están expresados en moneda homogénea; no se incluyen cálculos automáticos de retenciones impositivas ni conversiones multimoneda en tiempo real.
 * **Actualización manual:** Las tablas dinámicas requieren una actualización de datos (`Ctrl + Alt + F5` o *Refresh*) al incorporar nuevos registros en las pestañas de entrada.
+
+---
+
+## 9. Potencial y Escalabilidad Futura (Roadmap Técnico)
+
+Aunque esta solución basada en Excel resuelve de manera eficiente la estructuración inicial de datos y la visibilidad operativa, el diseño relacional implementado (`1 : N`) servirá como cimiento para escalar el sistema hacia una arquitectura de datos empresarial.
+
+### Próximos Pasos y Evolución del Sistema
+
+#### 1. Migración a Base de Datos Relacional (SQL)
+* **Modelado en MySQL:** Creación de las tablas físicas (`viajes`, `pasajeros`, `servicios`) con claves primarias (`PRIMARY KEY`), claves foráneas (`FOREIGN KEY`) y restricciones de integridad (`NOT NULL`, `CHECK`).
+* **Triggers y Procedimientos Almacenados:** Automatización del cálculo de márgenes financieros e historia de estados a nivel de base de datos para evitar la manipulación manual de registros.
+* **Consultas Avanzadas:** Ejecución de queries complejas con `JOIN`, subconsultas y funciones de ventana (`WINDOW FUNCTIONS`) para calcular ventas acumuladas, retención de clientes y márgenes promedio por temporada.
+
+#### 2. Visualización Avanzada y Power BI (Power BI / Tableau)
+* **Conexión Directa a la Base de Datos:** Integración del modelo relacional con Power BI mediante un modelo en estrella (*Star Schema*).
+* **Métricas DAX Complejas:** 
+  * Cálculo de *Customer Lifetime Value* (CLTV) por pasajero.
+  * *Time-to-Pay* (promedio de días entre la fecha de contrato y la fecha de pago efectivo a proveedores).
+  * Variación porcentual de costos e ingresos mes a mes (*YoY / MoM*).
+* **Dashboards Interactivos:** Publicación de reportes ejecutivos en la nube con actualización automática diaria para la gerencia comercial y operativa.
+
+#### 3. Automatización de Flujos de Trabajo (ETL / Integración)
+* **Scripts de Carga y Limpieza (Python / Pandas):** Creación de pipelines de datos (ETL) para ingestar automáticamente reportes de ventas, conectando con APIs de proveedores o procesando archivos `.csv` entrantes.
+* **Sistema de Alertas por Email (Python / Power Automate):** Envío automático de notificaciones diarias al equipo financiero sobre facturas de hoteles/aerolíneas próximas a vencer (vencimientos a 7, 3 y 1 día).
+
+#### 4. Modelos Analíticos Predictivos (Advanced Analytics)
+* **Previsión de Demanda (Forecasting):** Aplicación de modelos de series temporales para anticipar la demanda de pasajes y hoteles según la estacionalidad del año.
+* **Análisis de Rentabilidad por Proveedor:** Evaluación estadística de los proveedores y operadores del exterior más rentables y con menor tasa de incidencias para renegociar convenios comerciales.
