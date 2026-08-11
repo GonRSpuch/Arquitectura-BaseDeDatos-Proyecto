@@ -132,6 +132,7 @@ Al auditar la tabla plana original, se detectaron 5 categorías de fallas que af
 5. **Imposibilidad de Auditar Vencimientos y Márgenes Financieros:**
    * Al tener las fechas de vencimiento de transportes y hoteles repartidas en celdas estáticas al costado de la fila, resulta imposible armar un cronograma unificado de pagos a proveedores o prever liquidaciones por vencer en la semana.
   
+---
 
 ## 5. Diseño de la Solución: Arquitectura Relacional de 3 Pestañas
 
@@ -168,6 +169,19 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 
 ![Pestaña Dashboard y KPIs](PestañaServiciosyPagos.png)
 *Figura 3: Dashboard de Indicadores Clave y Tablas Dinámicas.*
+
+### Control Dinámico y Alerta de Vencimientos
+
+Para evitar demoras en los pagos a proveedores, prevenir recargos por mora y garantizar la continuidad operativa de los viajes, se incorporó la columna **`Estado de Vencimiento`** dentro de la estructura de *Servicios y Pagos*.
+
+Esta columna funciona como una herramienta de gestión preventiva en tiempo real:
+
+* **Monitoreo de Pendientes:** Para todas las facturas o compromisos pendientes, indica de forma exacta la cuenta regresiva de días restantes hasta la fecha límite (ej. *"7 días para vencimiento"*).
+* **Detección de Mora:** Si el plazo expira sin haberse registrado el pago, calcula y señala automáticamente los días de atraso acumulados (ej. *"Vencida hace 6 días"*).
+* **Limpieza Visual:** Una vez concretado el pago, la celda queda liberada para enfocar la atención del usuario únicamente en las partidas prioritarias.
+
+> **Automatización Diaria sin Mantenimiento:**  
+> Gracias al cálculo dinámico vinculado al reloj del sistema, los plazos se recalculan automáticamente cada vez que se abre la planilla. Esto permite que el equipo operativo cuente siempre con un estado de situación actualizado al día, sin necesidad de realizar modificaciones ni ajustes manuales.
 
 --- 
 
