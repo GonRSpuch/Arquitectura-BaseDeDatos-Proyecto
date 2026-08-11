@@ -183,6 +183,7 @@ Esta columna funciona como una herramienta de gestión preventiva en tiempo real
 > **Automatización Diaria sin Mantenimiento:**  
 > Gracias al cálculo dinámico vinculado al reloj del sistema, los plazos se recalculan automáticamente cada vez que se abre la planilla. Esto permite que el equipo operativo cuente siempre con un estado de situación actualizado al día, sin necesidad de realizar modificaciones ni ajustes manuales.
 
+![Vista previa de la columna Estado de Vencimiento](Nuevacolumna.png)
 --- 
 
 ## 6. Recomendaciones Estratégicas
