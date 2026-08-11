@@ -172,7 +172,7 @@ Se diseñó una arquitectura de **3 entidades principales** interconectadas medi
 
 ### Control Dinámico y Alerta de Vencimientos
 
-Ahoratambien, para evitar demoras en los pagos a proveedores, prevenir recargos por mora y garantizar la continuidad operativa de los viajes, se incorporó la columna **`Estado de Vencimiento`** dentro de la estructura de *Servicios y Pagos*.
+Ahora también, para evitar demoras en los pagos a proveedores, prevenir recargos por mora y garantizar la continuidad operativa de los viajes, se incorporó la columna **`Estado de Vencimiento`** dentro de la estructura de *Servicios y Pagos*.
 
 Esta columna funciona como una herramienta de gestión preventiva en tiempo real:
 
