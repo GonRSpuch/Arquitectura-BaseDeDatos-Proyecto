@@ -1,6 +1,6 @@
 # Sistema de Gestión Operativa de Viajes y Control Financiero
 
-**Gonzalo Rodríguez Spuch** — *Data Portfolio Project* – 2026
+**Gonzalo Rodríguez Spuch** — *Caso real* – 2026
 
 ---
 
