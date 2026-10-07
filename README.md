@@ -187,7 +187,7 @@ Esta columna funciona como una herramienta de gestión preventiva en tiempo real
 
 Luego se realizo la aplicacion de filtros con el objetivo de identificar aun mas rapidamente la informacion deseada, y ademas se le agrego algun formato de diseño profesional, y ahora dejandola ya lista para el uso diario. 
 
-![Planilla Finalizada](Planilla Finalizada.png)
+![Planilla Finalizada](PlanillaFinalizada.png)
 --- 
 
 ## 6. Recomendaciones Estratégicas
